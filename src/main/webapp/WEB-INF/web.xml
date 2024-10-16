@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>pensionlife</display-name>
+	<servlet>
+		<servlet-name>agree</servlet-name>
+		<servlet-class>pension.agree</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>agree</servlet-name>
+		<url-pattern>/mweb/agree.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>signupok</servlet-name>
+		<servlet-class>pension.signupok</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>signupok</servlet-name>
+		<url-pattern>/mweb/signupok.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>loginok</servlet-name>
+		<servlet-class>pension.loginok</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginok</servlet-name>
+		<url-pattern>/mweb/loginok.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>search_id</servlet-name>
+		<servlet-class>pension.search_id</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>search_id</servlet-name>
+		<url-pattern>/mweb/search_id.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>search_pw</servlet-name>
+		<servlet-class>pension.search_pw</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>search_pw</servlet-name>
+		<url-pattern>/mweb/search_pw.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>qawrite</servlet-name>
+		<servlet-class>pension.qawriteok</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>qawrite</servlet-name>
+		<url-pattern>/mweb/qawriteok.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>filedelete</servlet-name>
+		<servlet-class>pension.file_delete</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>filedelete</servlet-name>
+		<url-pattern>/mweb/file_delete.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>admin_qawrite</servlet-name>
+		<servlet-class>pension.admin_qawriteok</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>admin_qawrite</servlet-name>
+		<url-pattern>/mweb/admin_qawriteok.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>qadelete</servlet-name>
+		<servlet-class>pension.qadeleteok</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>qadelete</servlet-name>
+		<url-pattern>/mweb/qadeleteok.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>qamodifyok</servlet-name>
+		<servlet-class>pension.qamodifyok</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>qamodifyok</servlet-name>
+		<url-pattern>/mweb/qamodifyok.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>reservation</servlet-name>
+		<servlet-class>pension.reservation</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reservation</servlet-name>
+		<url-pattern>/mweb/reservation.do</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
