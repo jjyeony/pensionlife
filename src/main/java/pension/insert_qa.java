@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.ArrayList;
-//qa table?— ? •ë³´ë?? ???¥?•˜?Š” class
+//qa tableì— ì •ë³´ë¥¼ ì €ì¥í•˜ëŠ” class
 public class insert_qa {
 	db_pension db=new db_pension();
 	Connection con=null;

@@ -6,25 +6,32 @@
 <%
 PreparedStatement ps = null;
 ResultSet rs = null;
-String user_id=(String)session.getAttribute("id");
-String sql = "select * from reservation where ruser_id=?";
+String user_id = (String) session.getAttribute("id");
+String sql = "select * from reservation where ruser_id = ?";
 ps = dbcon.prepareStatement(sql);
 ps.setString(1, user_id);
 rs = ps.executeQuery();
-rs.next();
-if(user_id != null){
-	String rpension_name = rs.getString("rpension_name");
-	String rroom = rs.getString("rroom");
-	String rdatechoice = rs.getString("rdatechoice");
-	String rroom_info = rs.getString("rroom_info");
-	String rmember = rs.getString("rmember");
-	String radd_member = rs.getString("radd_member");
-	String rprice = rs.getString("rprice");
-	String ruser_name = rs.getString("ruser_name");
-	String ruser_hp = rs.getString("ruser_hp");
-	String ruser_member = rs.getString("ruser_member");
-	String ruser_email = rs.getString("ruser_email");
 
+// ResultSet에 데이터가 있는지 먼저 확인
+if(user_id == null)
+{
+	%>
+	<script>alert("로그인이 필요합니다.");location.href="index.jsp";</script>
+	<%
+} else {
+if (rs.next()) {
+    // 데이터가 있을 경우 변수 초기화
+    String rpension_name = rs.getString("rpension_name") != null ? rs.getString("rpension_name") : "정보 없음";
+    String rroom = rs.getString("rroom") != null ? rs.getString("rroom") : "정보 없음";
+    String rdatechoice = rs.getString("rdatechoice") != null ? rs.getString("rdatechoice") : "정보 없음";
+    String rroom_info = rs.getString("rroom_info") != null ? rs.getString("rroom_info") : "정보 없음";
+    String rmember = rs.getString("rmember") != null ? rs.getString("rmember") : "정보 없음";
+    String radd_member = rs.getString("radd_member") != null ? rs.getString("radd_member") : "정보 없음";
+    String rprice = rs.getString("rprice") != null ? rs.getString("rprice") : "정보 없음";
+    String ruser_name = rs.getString("ruser_name") != null ? rs.getString("ruser_name") : "정보 없음";
+    String ruser_hp = rs.getString("ruser_hp") != null ? rs.getString("ruser_hp") : "정보 없음";
+    String ruser_member = rs.getString("ruser_member") != null ? rs.getString("ruser_member") : "정보 없음";
+    String ruser_email = rs.getString("ruser_email") != null ? rs.getString("ruser_email") : "정보 없음";
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -55,21 +62,15 @@ if(user_id != null){
     <ol class="reser_ol">
     <li>
     <span class="reser_part1">펜션명</span>
-    <span class="reser_part2" >
-    <%=rpension_name %>
-    </span>
+    <span class="reser_part2" ><%=rpension_name %></span>
     </li>
     <li>
     <span class="reser_part1">객실선택</span>
-    <span class="reser_part2">
-    <%=rroom %>
-    </span>
+    <span class="reser_part2"><%=rroom %></span>
     </li>
     <li>
     <span class="reser_part1">일자선택</span>
-    <span class="reser_part2">
-    <%=rdatechoice %>
-    </span>
+    <span class="reser_part2"><%=rdatechoice %></span>
     </li>
     <li>
     <span class="reser_part1">객실구조</span>
@@ -77,55 +78,39 @@ if(user_id != null){
     </li>
     <li>
     <span class="reser_part1">입실인원</span>
-    <span class="reser_part2">
-    <%=rmember %>
-    </span>
+    <span class="reser_part2"><%=rmember %></span>
     </li>
     <li>
     <span class="reser_part1">추가인원</span>
-    <span class="reser_part2">
-    <%=radd_member %>
-    </span>
+    <span class="reser_part2"><%=radd_member %></span>
     </li>
     <li>
     <span class="reser_part1">구매금액</span>
-    <span class="reser_part2">   
-    <%=rprice %>
-    </span>
+    <span class="reser_part2"><%=rprice %></span>
     </li>
    </ol>
     <p>예약자정보 입력</p>
         <ol class="reser_ol">
     <li>
     <span class="reser_part1">객실선택</span>
-    <span class="reser_part2">
-    <%=rpension_name %>
-    </span>
+    <span class="reser_part2"><%=rpension_name %></span>
     </li>
     <li>
     <li>
     <span class="reser_part1">예약자명</span>
-    <span class="reser_part2">
-    <%=ruser_name %>
-    </span>
+    <span class="reser_part2"><%=ruser_name %></span>
     </li>
     <li>
     <span class="reser_part1">휴대폰</span>
-    <span class="reser_part2">
-    <%=ruser_hp %>
-    </span>
+    <span class="reser_part2"><%=ruser_hp %></span>
     </li>
     <li>
     <span class="reser_part1">입실인원</span>
-    <span class="reser_part2">
-    <%=ruser_member %>
-    </span>
+    <span class="reser_part2"><%=ruser_member %></span>
     </li>
     <li>
-    <span class="reser_part1" name="ruser_email">이메일</span>
-    <span class="reser_part2">
-    <%=ruser_email %>
-    </span>
+    <span class="reser_part1">이메일</span>
+    <span class="reser_part2"><%=ruser_email %></span>
     </li>
     </ol>
     <div type="button" class="member_agreebtn" onclick="reservation()">예약취소</div>
@@ -139,11 +124,13 @@ if(user_id != null){
 </html>
 <%
 } else {
-	%>
-	<script>alert("로그인이 필요합니다.");location.href="index.jsp";</script>
-	<%
+    // 예약 내역이 없을 경우 처리
+    %>
+    <script>alert("예약 내역이 없습니다.");location.href="index.jsp";</script>
+    <%
 }
-%>
+}
 rs.close();
 ps.close();
-dbcon.close(); %>
+dbcon.close();
+%>

@@ -48,7 +48,7 @@ public class loginok extends HttpServlet {
 						response.sendRedirect("./index.jsp");
 					} else {
 						pwr.write("<script>"
-								+ "alert('?•„?´?””?? ë¹„ë?ë²ˆí˜¸ë¥? ?™•?¸?•´ì£¼ì„¸?š”.');"
+								+ "alert('ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.');"
 								+ "location.href = './index.jsp'"
 								+ "</script>");
 					}

@@ -34,9 +34,9 @@ public class file_delete extends HttpServlet {
 		String url=request.getServletContext().getRealPath("/upload/");
 		
 		File fe=new File(url+del_filename);
-		fe.delete();		//?›¹ ?””? ‰?† ë¦¬ì—?„œ ?ŒŒ?¼ ?‚­? œ
+		fe.delete();		//ì›¹ ë””ë ‰í† ë¦¬ì—ì„œ íŒŒì¼ ì‚­ì œ
 		
-		//db?— ???¥?œ ?ŒŒ?¼ ? •ë³? ?‚­? œ
+		//dbì— ì €ì¥ëœ íŒŒì¼ ì •ë³´ ì‚­ì œ
 		String sql1="";
 		String sql2="";
 		if(fileno.equals("file_btn1")) {

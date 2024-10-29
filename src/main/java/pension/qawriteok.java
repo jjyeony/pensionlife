@@ -42,19 +42,19 @@ public class qawriteok extends HttpServlet {
 		String file_rename2="";
 		
 		String url=request.getServletContext().getRealPath("/upload/");
-		file_rename re=new file_rename();		//?ŒŒ?¼ ?´ë¦? ë³?ê²? classë¡œë“œ		
+		file_rename re=new file_rename();		//íŒŒì¼ ì´ë¦„ ë³€ê²½ classë¡œë“œ		
 		if(filename1!=""||filesize1>0) {
 			file_rename1=re.rename(filename1);	
 			file1_db="/upload/"+file_rename1;
-			file1.write(url+file_rename1);			//web ?””? ‰?† ë¦¬ì— ?ŒŒ?¼ ???¥
+			file1.write(url+file_rename1);			//web ë””ë ‰í† ë¦¬ì— íŒŒì¼ ì €ì¥
 		}
 		if(filename2!=""||filesize2>0) {	
 			file_rename2=re.rename(filename2);
 			file2_db="/upload/"+file_rename2;
-			file2.write(url+file_rename2);			//web ?””? ‰?† ë¦¬ì— ?ŒŒ?¼ ???¥
+			file2.write(url+file_rename2);			//web ë””ë ‰í† ë¦¬ì— íŒŒì¼ ì €ì¥
 		}
 		
-		//qawrite?—?„œ ë°›ì? dataë¥? ë°°ì—´?— ?…? ¥
+		//qawriteì—ì„œ ë°›ì€ dataë¥¼ ë°°ì—´ì— ì…ë ¥
 		ArrayList<String> db_data=new ArrayList<String>();	
 		db_data.add(category);
 		db_data.add(name);
@@ -66,19 +66,19 @@ public class qawriteok extends HttpServlet {
 		db_data.add(filename1);
 		db_data.add(file2_db);
 		db_data.add(filename2);
-		db_data.add("ë¯¸ë‹µë³?");
-		//qa table?— insert?•˜?—¬ db?— ? •ë³´ë?? ???¥?•˜?Š” class
+		db_data.add("ë¯¸ë‹µë³€");
+		//qa tableì— insertí•˜ì—¬ dbì— ì •ë³´ë¥¼ ì €ì¥í•˜ëŠ” class
 		insert_qa in=new insert_qa();
 		int result=in.qawrite(db_data);
 		
 		this.pw=response.getWriter();
 		if(result>0) {
-			this.pw.write("<script>alert('Q&Aê°? ???¥?˜?—ˆ?Šµ?‹ˆ?‹¤.');"
+			this.pw.write("<script>alert('Q&Aê°€ ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.');"
 					+ "location.href='./qalist.jsp';"
 					+ "</script>");
 		}
 		else {
-			this.pw.write("<script>alert('?˜¤ë¥˜ê? ë°œìƒ?•˜???Šµ?‹ˆ?‹¤.');</script>");
+			this.pw.write("<script>alert('ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.');</script>");
 		}
 		
 		this.pw.close();

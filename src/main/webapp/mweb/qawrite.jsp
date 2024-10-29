@@ -8,7 +8,7 @@
     <title>호텔 & 펜션 예약시스템</title>
     <link rel="stylesheet" type="text/css" href="./css/m_index.css?v=1">
     <link rel="stylesheet" type="text/css" href="./css/m_sub.css?v=2">
-    <link rel="stylesheet" type="text/css" href="./css/m_qaboard.css?v=2">
+    <link rel="stylesheet" type="text/css" href="./css/m_qaboard.css?v=3">
     <script src="./js/jquery.js"></script>
     <script src="./js/m_index.js"></script>
 </head>

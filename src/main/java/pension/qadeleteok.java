@@ -33,14 +33,14 @@ public class qadeleteok extends HttpServlet {
 			String del_filename=file_del1.substring(del+1);		
 			
 			fe=new File(url+del_filename);
-			fe.delete();		//?›¹ ?””? ‰?† ë¦¬ì—?„œ ?ŒŒ?¼1 ?‚­? œ
+			fe.delete();		//ì›¹ ë””ë ‰í† ë¦¬ì—ì„œ íŒŒì¼1 ì‚­ì œ
 		}
 		if(file_del2!="") {
 			int del=file_del2.lastIndexOf("/");
 			String del_filename=file_del2.substring(del+1);		
 			
 			fe=new File(url+del_filename);
-			fe.delete();		//?›¹ ?””? ‰?† ë¦¬ì—?„œ ?ŒŒ?¼2 ?‚­? œ
+			fe.delete();		//ì›¹ ë””ë ‰í† ë¦¬ì—ì„œ íŒŒì¼2 ì‚­ì œ
 		}
 		
 		
@@ -56,13 +56,13 @@ public class qadeleteok extends HttpServlet {
 			this.pw=response.getWriter();
 			if(result>0) {
 				this.pw.write("<script>"
-						+ "alert('ë¬¸ì˜ ?‚­? œê°? ?™„ë£Œë˜?—ˆ?Šµ?‹ˆ?‹¤.');"
+						+ "alert('ë¬¸ì˜ ì‚­ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.');"
 						+ "location.href='./qalist.jsp';"
 						+ "</script>");
 			}
 			else {
 				this.pw.write("<script>"
-						+ "alert('?˜¤ë¥˜ê? ë°œìƒ?•˜???Šµ?‹ˆ?‹¤..');"
+						+ "alert('ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤..');"
 						+ "</script>");
 			}
 		}

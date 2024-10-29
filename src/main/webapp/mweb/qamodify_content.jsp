@@ -55,17 +55,17 @@ var file_hd2=document.getElementById("file_hd2");
 var file_add=document.getElementById("file_add");
 var fileno="";
 
-if(file_hd1.value==""){
+if(file_hd1.value=="" || file_hd1.value==" "){
 	file1.style.display="none";
 	file_add.style.display="block";
 	
-	if(file_hd2.value==""){
+	if(file_hd2.value=="" || file_hd2.value==null){
 		file2.style.display="none";
 		file_add.style.display="block";
 	}
 	fileno="1";
 }
-else if(file_hd2.value==""){
+else if(file_hd2.value=="" || file_hd2.value==null){
 	file2.style.display="none";
 	file_add.style.display="block";
 	fileno="2";

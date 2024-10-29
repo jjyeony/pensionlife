@@ -28,8 +28,8 @@ ResultSet rs2=ps.executeQuery();
             <li><input type="text" class="w_input1 w_bg" value="<%=rs.getString("qmail") %>" readonly></li>
             <li><input type="text" class="w_input1" value="<%=rs.getString("qtitle") %>" readonly></li>
             <li><textarea class="w_input2" readonly><%=rs.getString("qtext") %></textarea></li>
-            <li class="fileview">첨부파일 : <%=rs.getString("qfile_name1") %> </li>
-            <li class="fileview">첨부파일 : <%=rs.getString("qfile_name2") %></li>
+            <li class="fileview" id="file_view1">첨부파일 : <%=rs.getString("qfile_name1") %><input type="hidden" id="file1" value="<%=rs.getString("qfile_name1") %>"> </li>
+            <li class="fileview" id="file_view2">첨부파일 : <%=rs.getString("qfile_name2") %><input type="hidden" id="file2" value="<%=rs.getString("qfile_name2") %>"> </li>
             <script>var answerok="<%=rs.getString("qanswer")%>"</script>
         </ul>
         <%} %>
@@ -49,6 +49,18 @@ ResultSet rs2=ps.executeQuery();
      </form>
 </section>
 <script>
+var file_view1=document.getElementById("file_view1");
+var file_view2=document.getElementById("file_view2");
+var file1=document.getElementById("file1");
+var file2=document.getElementById("file2");
+
+if(file1.value=="" || file1.value==" "){
+	file_view1.style.display="none";
+}
+if(file2.value==""){
+	file_view2.style.display="none";
+}
+
 if(answerok=="답변완료"){
 	var modify_btn=document.getElementById("qamodify_btn");
 	modify_btn.style.display="none";

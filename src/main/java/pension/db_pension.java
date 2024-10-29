@@ -8,7 +8,7 @@ public class db_pension {
 
 	public Connection getConnection() throws Exception{
 		String dbinfo = "com.mysql.jdbc.Driver";
-		String dburl = "jdbc:mysql://localhost:3306/ckk_402";
+		String dburl = "jdbc:mysql://webmiwon.co.kr:3306/ckk_402";
 		String dbuser = "ckk_402";
 		String dbpass = "404_ckk";
 		

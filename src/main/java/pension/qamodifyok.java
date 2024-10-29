@@ -38,14 +38,14 @@ public class qamodifyok extends HttpServlet {
 		String file_rename="";
 		
 		String url=request.getServletContext().getRealPath("/upload/");
-		file_rename re=new file_rename();		//?ŒŒ?¼ ?´ë¦? ë³?ê²? classë¡œë“œ		
+		file_rename re=new file_rename();		//íŒŒì¼ ì´ë¦„ ë³€ê²½ classë¡œë“œ		
 		if(filename!=""||filesize>0) {
 			file_rename=re.rename(filename);
 			file_db="/upload/"+file_rename;
-			file.write(url+file_rename);				//web ?””? ‰?† ë¦¬ì— ?ŒŒ?¼ ???ž¥
+			file.write(url+file_rename);				//web ë””ë ‰í† ë¦¬ì— íŒŒì¼ ì €ìž¥
 		}
 	
-		//db ? •ë³? ?ˆ˜? • 
+		//db ì •ë³´ ìˆ˜ì • 
 		db_pension db=new db_pension();
 		String sql1="update qa set qtitle=? where qidx=?";
 		String sql2="update qa set qtext=? where qidx=?";
@@ -86,7 +86,7 @@ public class qamodifyok extends HttpServlet {
 			this.pw=response.getWriter();
 			if(result1>0&&result2>0&&result3>0&&result4>0) {
 				this.pw.write("<script>"
-						+ "alert('ë¬¸ì˜ê°? ? •?ƒ? ?œ¼ë¡? ?ˆ˜? •?˜?—ˆ?Šµ?‹ˆ?‹¤.');"
+						+ "alert('ë¬¸ì˜ê°€ ì •ìƒì ìœ¼ë¡œ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.');"
 						+ "location.href='./qalist.jsp';"
 						+ "</script>");
 			}

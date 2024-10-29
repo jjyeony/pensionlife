@@ -22,7 +22,7 @@ public class insert_answer {
 			result=this.ps.executeUpdate();
 			
 			if(result>0) {
-				String sql2="update qa set qanswer='?‹µë³??™„ë£?' where qidx=?";
+				String sql2="update qa set qanswer='ë‹µë³€ì™„ë£Œ' where qidx=?";
 				this.ps=this.con.prepareStatement(sql2);
 				this.ps.setString(1, data.get(0));
 				int result2=this.ps.executeUpdate();

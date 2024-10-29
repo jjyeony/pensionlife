@@ -24,7 +24,7 @@ public class reservation extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		db_pension db = new db_pension();
 
-		// ?œ?…˜?˜ˆ?•½? •ë³?
+		// íœì…˜ì˜ˆì•½ì •ë³´
 		String ruser_id = request.getParameter("ruser_id");
 		String rpension_name = request.getParameter("rpension_name");
 		String rroom = request.getParameter("rroom");
@@ -35,7 +35,7 @@ public class reservation extends HttpServlet {
 		String rprice = request.getParameter("rprice");
 		
 		//System.out.println(rdatechoice);
-		// ?˜ˆ?•½? ? •ë³?
+		// ì˜ˆì•½ì ì •ë³´
 		String ruser_name = request.getParameter("rname");
 		String ruser_hp = request.getParameter("rhp");
 		String ruser_member = request.getParameter("rcount");
@@ -62,9 +62,9 @@ public class reservation extends HttpServlet {
 			int result = this.ps.executeUpdate();
 			this.pw = response.getWriter();
 			if (result > 0) {
-				this.pw.write("<script>" + "alert('?˜ˆ?•½ ?™„ë£?!');" + "location.href='./index.jsp';" + "</script>");
+				this.pw.write("<script>" + "alert('ì˜ˆì•½ ì™„ë£Œ!');" + "location.href='./index.jsp';" + "</script>");
 			} else {
-				this.pw.write("<script>alert('?˜¤ë¥˜ê? ë°œìƒ?•˜???Šµ?‹ˆ?‹¤.');</script>");
+				this.pw.write("<script>alert('ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.');</script>");
 			}
 		} catch (Exception e) {
 			System.out.println(e);

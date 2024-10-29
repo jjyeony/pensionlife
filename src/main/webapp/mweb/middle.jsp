@@ -1,5 +1,4 @@
 <%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,6 +9,7 @@ PreparedStatement ps = null;
 Statement st = null;
 RequestDispatcher rd = null;
 ResultSet rs = null;
+
 
 String sql1 = "select * from pensionlist where ppension_name='[강원 평창군] 한화리조트 평창' order by pprice asc limit 0,1";
 ps = dbcon.prepareStatement(sql1);

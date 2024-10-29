@@ -29,12 +29,12 @@ public class admin_qawriteok extends HttpServlet {
 	
 		this.pw=response.getWriter();
 		if(result>0) {
-			this.pw.write("<script>alert('?‹µë³? ?“±ë¡ì´ ?™„ë£Œë˜?—ˆ?Šµ?‹ˆ?‹¤.');"
+			this.pw.write("<script>alert('ë‹µë³€ ë“±ë¡ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.');"
 					+ "location.href='./admin_qalist.jsp';"
 					+ "</script>");
 		}
 		else {
-			this.pw.write("<script>alert('?˜¤ë¥˜ê? ë°œìƒ?•˜???Šµ?‹ˆ?‹¤.');</script>");
+			this.pw.write("<script>alert('ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.');</script>");
 		}
 		
 		this.pw.close();

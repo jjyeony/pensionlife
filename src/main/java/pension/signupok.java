@@ -29,7 +29,7 @@ public class signupok extends HttpServlet {
 					if(!(getParameter(request, user_info[count],"").isBlank())) {
 						ps.setString(count+1, getParameter(request, user_info[count],""));						
 					}else {
-						response.sendError(HttpServletResponse.SC_BAD_REQUEST, "?‚¬?š©? ?´ë¦?, ?´ë©”ì¼ ë°? ? „?™”ë²ˆí˜¸?Š” ?•„?ˆ˜?…?‹ˆ?‹¤.");
+						response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ì‚¬ìš©ì ì´ë¦„, ì´ë©”ì¼ ë° ì „í™”ë²ˆí˜¸ëŠ” í•„ìˆ˜ì…ë‹ˆë‹¤.");
 						return;
 					}
 					count++;
@@ -46,7 +46,7 @@ public class signupok extends HttpServlet {
 							index++;
 							ps.setString(index, getCheck(request, ck[count2],"Y"));
 						} else {
-							response.sendError(HttpServletResponse.SC_BAD_REQUEST, "?‚¬?š©? ?´ë¦?, ?´ë©”ì¼ ë°? ? „?™”ë²ˆí˜¸?Š” ?•„?ˆ˜?…?‹ˆ?‹¤.");
+							response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ì‚¬ìš©ì ì´ë¦„, ì´ë©”ì¼ ë° ì „í™”ë²ˆí˜¸ëŠ” í•„ìˆ˜ì…ë‹ˆë‹¤.");
 							return;
 						}
 					} else {
@@ -71,17 +71,17 @@ public class signupok extends HttpServlet {
 				response.sendRedirect("index.jsp");
 				
 			} catch (Exception e) {
-				PrintWriter pw = new PrintWriter(System.out);
+				PrintWriter pw = response.getWriter();
 				
 				pw.write("<script>"
-						+ "alert('?•„?´?”” ?˜?Š” ? „?™”ë²ˆí˜¸ë¥? ë°”ê¾¸?…”?•¼?•©?‹ˆ?‹¤.');"
+						+ "alert('ì•„ì´ë”” ë˜ëŠ” ì „í™”ë²ˆí˜¸ë¥¼ ë°”ê¾¸ì…”ì•¼í•©ë‹ˆë‹¤.');"
 						+ "history.go(-1);"
 						+ "</script>");
-				
+				pw.flush();
 				pw.close();
 				System.out.println(e);
 				//response.sendError(0);
-				response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "?„œë²? ?‚´ë¶? ?˜¤ë¥˜ê? ë°œìƒ?–ˆ?Šµ?‹ˆ?‹¤.");
+				response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "ì„œë²„ ë‚´ë¶€ ì˜¤ë¥˜ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
 			}
 		
 	}
