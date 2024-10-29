@@ -10,10 +10,6 @@ PreparedStatement ps=dbcon.prepareStatement(sql);
 ResultSet rs=ps.executeQuery();
 
 %>
-<header class="admin_header"><img src="./img/header_logo.png"></header>
-<aside class="admin_qa">
-    <p><img src="./admin_img/logo.png"><span><%=ad_id %>님 환영합니다. <a href="javascript:void logout()">[로그아웃]</a></span></p>
-</aside>
 <article class="admin_lists">
     <p>QA 문의 게시판 리스트</p>
     <ul class="lists_uls color1">
@@ -40,12 +36,6 @@ function select_ad_qalist(i){
 	frm_ad_qalist.method="post";
 	frm_ad_qalist.action="./admin_qawrite.jsp";
 	frm_ad_qalist.submit();
-}
-function logout(){
-	if(confirm("로그아웃 하시겠습니까?")){
-		alert("로그아웃 되었습니다.");
-		location.href="./admin_login.jsp";
-	}
 }
 </script>
 <%

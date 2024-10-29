@@ -19,4 +19,12 @@
 <%@ include file="./admin_qawrite_content.jsp"%>
 <%@ include file="./footer.jsp"%>
 </body>
+<script>
+function logout(){
+	if(confirm("로그아웃 하시겠습니까?")){
+		alert("로그아웃 되었습니다.");
+		location.href="./admin_login.jsp";
+	}
+}
+</script>
 </html>

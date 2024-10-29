@@ -29,13 +29,17 @@ ResultSet rs=ps.executeQuery();
         <li><textarea name="qa_answer" placeholder="답변내용을 입력하세요" class="answer"></textarea></li>
     </form>
     </ul>
-    <input type="button" class="adbtn1" value="답변등록" onclick="answer_send()">
+    <input type="button" class="adbtn1" style="margin-bottom: 5px;" value="답변등록" onclick="answer_send()">
+    <input type="button" class="adbtn1" value="목록" onclick="go_qalist()">
 </article>
 <script>
 function answer_send(){
 	frm_ad_qawrite.method="post";
 	frm_ad_qawrite.action="admin_qawriteok.do";
 	frm_ad_qawrite.submit();
+}
+function go_qalist(){
+	location.href="./admin_qalist.jsp";
 }
 </script>
 <%
